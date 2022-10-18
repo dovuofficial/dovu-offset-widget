@@ -71,7 +71,7 @@ This below signature is using the **HMAC Secret Key** of *"secret"*, so you will
 
 ```json
 {
-  "x-signature": 'ZdSc2naWh4+hjSsJ24LxeCVIZSRzL+QWG9P+HO7ETaE='
+  "x-signature": "ZdSc2naWh4+hjSsJ24LxeCVIZSRzL+QWG9P+HO7ETaE="
 }
 ```
 
