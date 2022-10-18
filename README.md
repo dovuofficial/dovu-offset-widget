@@ -55,7 +55,7 @@ https://dovu.market/{partner-identifier}?amount={carbon-amount}&ref={customer-re
 
 ## After purchase flow
 
-The market identifier will be stored within the cookies of a given Consumer, this will provide them access to your reserved carbon, when they complete a purchase they can be redirected back to your platform, and a corresponding webhook will be sent to your system.
+The partner identifier will be stored within the cookies of a given Consumer, this will provide them access to your reserved carbon, when they complete a purchase they can be redirected back to your platform, and a corresponding webhook will be sent to your system.
 
 ### Example webhook payload
 
@@ -79,7 +79,7 @@ This below signature is using the **HMAC Secret Key** of *"secret"*, so you will
 
 The payload is constructed of four items:
 
-- context: A duplication of your market identifier.
+- context: A duplication of your partner identifier.
 - reference: A reference to your customer that is offsetting carbon through the marketplace, will be null if no ref is provided.
 - retirement-tx: This identifier is a state proof ready string that links back to Hedera transaction.
 - reserve-remaining-kg: This provides a figure for the remaining kilograms that have been reserved for you after retirement.
@@ -87,7 +87,7 @@ The payload is constructed of four items:
 ```json
 {
   "data": {
-    "context": "market-identifier",
+    "context": "partner-identifier",
     "reference": "customer-ref",
     "retirement-tx": "0.0.1156-1663839551-50378818",
     "reserve-remaining-kg": 2000
