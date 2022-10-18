@@ -16,12 +16,12 @@ sequenceDiagram
     participant Integrator
     loop Business Development
         Integrator-->>DOVU: Requirements of proposed usecase
-        DOVU-->>Integrator: Descision of allocation with contract
+        DOVU-->>Integrator: Decision of allocation with contract
         Integrator-->>DOVU: Acceptanace/Deny or legal redlines
         DOVU-->>Integrator: Reserve amount of carbon
     end
 
-    DOVU->>Integrator: Assign HMAC secret and market identifier
+    DOVU->>Integrator: Assign HMAC secret and partner identifier
     Integrator->>Customer: Display dynamic DOVU button 
     Customer->>DOVU: Purchase of carbon from DOVU marketplace
     DOVU->>Customer: On purchase, redirect back to frontend
@@ -38,10 +38,10 @@ You should provide these items to DOVU before starting an integration:
 
 You will receive these following items when you start integrating with DOVU.
 
-1. Marketplace Identifier
+1. Partner identifier
 2. HMAC Secret Key
 
-Your marketplace identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
+Your partner identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
 
 ## Example Button/Structure
 
@@ -50,7 +50,7 @@ We will provide example brand assets to assist with integrating a DOVU offset bu
 The button and link will be dynamic and it will display to a consumer how much carbon they need to offset.
 
 ```
-https://dovu.market/{client-identifier}?amount={carbon-amount}&ref={customer-reference}
+https://dovu.market/{partner-identifier}?amount={carbon-amount}&ref={customer-reference}
 ```
 
 ## After purchase flow
