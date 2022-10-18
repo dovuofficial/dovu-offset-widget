@@ -71,7 +71,7 @@ This below signature is using the **HMAC Secret Key** of *"secret"*, so you will
 
 ```json
 {
-  "x-signature": "ZdSc2naWh4+hjSsJ24LxeCVIZSRzL+QWG9P+HO7ETaE="
+  "x-signature": "Qtt+sLAN4WvCMbup4feMayUepwTp0vma0Y3men4Anoo="
 }
 ```
 
@@ -82,6 +82,7 @@ The payload is constructed of four items:
 - context: A duplication of your partner identifier.
 - reference: A reference to your customer that is offsetting carbon through the marketplace, will be null if no ref is provided.
 - retirement-tx: This identifier is a state proof ready string that links back to Hedera transaction.
+- retired-kgs: The amount of kgs that have been retired from the transaction.
 - reserve-remaining-kg: This provides a figure for the remaining kilograms that have been reserved for you after retirement.
 
 ```json
@@ -90,6 +91,7 @@ The payload is constructed of four items:
     "context": "partner-identifier",
     "reference": "customer-ref",
     "retirement-tx": "0.0.1156-1663839551-50378818",
+    "retired-kgs": 10,
     "reserve-remaining-kg": 2000
   }
 }
