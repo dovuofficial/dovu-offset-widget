@@ -1,14 +1,14 @@
 # Integrating with DOVU Market 🕊
  
-In this document you learn how you can work with DOVU to support the purchase of fully auditable carbon credits to your clients that have been created through DOVU's audit trail.
+In this document you will learn how you can work with DOVU to support the purchase of DOVU's fully auditable carbon credits on behalf of your clients.
 
-> Please note, this is evolving documentation and may be subject to change, we will always take "best effort" precautions for the communication of the backwards compatibility of systems.
+> Please note, this is an evolving documentation and may be subject to change, we will always take "best effort" precautions for the communication of the backwards compatibility of systems.
 
-Below, we will describe the basic flow of what you can expect it will follow with example pay loads of data packets that your systems can receive to keep track of your clients purchasing carbon credits through the [DOVU marketplace](https://app.dovu.market/).
+Below, we will describe the basic flow of what you can expect. It will follow with example payloads of data packets that your systems can receive to keep track of your clients purchasing carbon credits through the [DOVU marketplace](https://app.dovu.market/).
 
 ## Your interaction with DOVU, a flow.
 
-As fully-auditable carbon credits are a highly limited resource we will work with whitelisted clients on a one-on-one basis to ensure that we can reserve enough carbon for qualifying usecases.
+As fully-auditable carbon credits are a highly limited resource we will work with whitelisted clients on a one-on-one basis to ensure that we can reserve enough carbon for qualifying use cases.
 
 ```mermaid
 sequenceDiagram
@@ -41,13 +41,13 @@ You will receive these following items when you start integrating with DOVU.
 1. Marketplace Identifier
 2. HMAC Secret Key
 
-Your marketplace identifier allows us to capture a purchasing connect it to your application, You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
+Your marketplace identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
 
 ## Example Button/Structure
 
-We will provide example brand assets of how you could integrate a DOVU offset button on your service, currently you are Free to use whatever styling you wish that we would prefer that you add the DOVU logo. 
+We will provide example brand assets to assist with integrating a DOVU offset button on your service. Currently you are free to use whatever styling you wish however we would prefer that you add the DOVU logo.
 
-The button and link will be dynamic, And it will display to a consumer how much carbon they need to offset.
+The button and link will be dynamic and it will display to a consumer how much carbon they need to offset.
 
 ```
 https://dovu.market/{client-identifier}?amount={carbon-amount}&ref={customer-reference}
@@ -79,15 +79,15 @@ This below signature is using the **HMAC Secret Key** of *"secret"*, so you will
 
 The payload is constructed of four items:
 
-- context: A duplication of your client reference.
-- reference: A reference to your customer that is offset carbon through the marketplace, will be null if no ref is provided.
+- context: A duplication of your market identifier.
+- reference: A reference to your customer that is offsetting carbon through the marketplace, will be null if no ref is provided.
 - retirement-tx: This identifier is a state proof ready string that links back to Hedera transaction.
 - reserve-remaining-kg: This provides a figure for the remaining kilograms that have been reserved for you after retirement.
 
 ```json
 {
   "data": {
-    "context": "client-identifier",
+    "context": "market-identifier",
     "reference": "customer-ref",
     "retirement-tx": "0.0.1156-1663839551-50378818",
     "reserve-remaining-kg": 2000
@@ -99,7 +99,7 @@ The payload is constructed of four items:
 
 DOVU uses state proofs to indicate when a particular purchase of carbon has been retired as a fixed point in time, this is simply a transfer. We then generate the certificates which customers can view from their DOVU dashboard. 
 
-Upon receiving and validating the webhook you can generate a state proof through the above **retirement-tx** using this endpoint below, on testnet. These state proofs can be large, So the onus is on the integrator to have a GET request to the mirrornode's stateproof endpoint. 
+Upon receiving and validating the webhook you can generate a state proof through the above **retirement-tx** using this endpoint below, on testnet. These state proofs can be large, So the onus is on the integrator to have a GET request to the [Hedera Mirror Node](https://docs.hedera.com/guides/mirrornet/hedera-mirror-node) stateproof endpoint. 
 
 ```
 https://testnet.mirrornode.hedera.com/api/v1/transactions/0.0.1156-1663839551-50378818/stateproof
@@ -107,4 +107,4 @@ https://testnet.mirrornode.hedera.com/api/v1/transactions/0.0.1156-1663839551-50
 
 ## Final Words
 
-Currently, our B2B integration features are in constant development, We will happily consider adding additional features and APIs to support your business requirements just give us a shout! 
+Currently, our B2B integration features are in constant development. We will happily consider adding additional features and APIs to support your business requirements, just give us a shout! 
