@@ -49,6 +49,8 @@ We will provide example brand assets to assist with integrating a DOVU offset bu
 
 The button and link will be dynamic and it will display to a consumer how much carbon they need to offset.
 
+Our medium-term aim will be to provide a dynamic button which will be similar in behaviour to [PayPal button](https://developer.paypal.com/demo/checkout/#/pattern/client) as a simple integration.
+
 ```
 https://dovu.market/{partner-identifier}?amount={carbon-amount}&ref={customer-reference}
 ```
