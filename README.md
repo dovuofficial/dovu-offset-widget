@@ -45,7 +45,7 @@ Your partner identifier allows us to notify your application when a purchase is 
 
 ## Example Button/Structure
 
-We will provide example brand assets to assist with integrating a DOVU offset button on your service. Currently you are free to use whatever styling you wish however we would prefer that you add the DOVU logo.
+We will provide example brand assets to assist with integrating a DOVU offset button on your service. Currently, you are free to use whatever styling you wish however we would prefer that you add the DOVU logo.
 
 The button and link will be dynamic and it will display to a consumer how much carbon they need to offset.
 
@@ -83,7 +83,7 @@ The payload is constructed of four items:
 
 - context: A duplication of your partner identifier.
 - reference: A reference to your customer that is offsetting carbon through the marketplace, will be null if no ref is provided.
-- retirement-tx: This identifier is a state proof ready string that links back to Hedera transaction.
+- retirement-tx: This identifier is a state proof ready string that links back to a Hedera transaction.
 - retired-kgs: The amount of kgs that have been retired from the transaction.
 - reserve-remaining-kg: This provides a figure for the remaining kilograms that have been reserved for you after retirement.
 
@@ -108,6 +108,26 @@ Upon receiving and validating the webhook you can generate a state proof through
 ```
 https://testnet.mirrornode.hedera.com/api/v1/transactions/0.0.1156-1663839551-50378818/stateproof
 ```
+
+### Understanding the context of retirement-tx (coming soon) 
+
+We make the assumption that businesses want to select multiple projects for there clients to diversify the offering of carbon, because of this there would naturally be many *retirement-tx* values that represent the transfer events of different carbon tokens.
+
+So, to solve this DOVU has a dedicated topic to log a group of retirement events, for a single order. When a message is pushed onto the topic, the *transaction-id* can be used to generate the required stateproof of the *collection of retirements*. 
+
+Each message will have a reference to many retirement transactions in this illustrated format, inside the topic
+
+```json
+{
+  "retirement-txs": [
+    "0.0.1156-1663839551-50378818",
+    "0.0.1156-1663839551-50378819",
+    "0.0.1156-1663839551-50378820"
+  ]
+}
+```
+
+This solution provides the flexibility of a pointer to many events while if you login to your business account you can look at the generated certificate for each individual carbon retirement event.
 
 ## Final Words
 
