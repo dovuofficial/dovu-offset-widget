@@ -7,16 +7,19 @@ The widget can be customised using the following parameters on the iFrame src ur
 ### Specify a set amount of carbon to offset
 
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUST_REF>&amount=<AMOUNT>`
+
 ![Amount](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetAmount.png)
 
 ### Specify a suggested amount of carbon to offset that can be edited
 
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUST_REF>&placeholderAmount=<AMOUNT>`
+
 ![Placholder Amount](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetPlaceholder.png)
 
 ### Pass no amount for the default behaviour
 
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUST_REF>`
+
 ![No Amount](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetDefault.png)
 
 | Parameter         | Description                                                                                                              | Example  |
