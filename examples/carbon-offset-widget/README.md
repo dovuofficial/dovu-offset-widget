@@ -28,5 +28,3 @@ The widget can be customised using the following parameters on the iFrame src ur
 | customerRef       | Required: An identifier for the customer buying the carbon offset                                                        | cust_123 |
 | amount            | Optional: The amount of carbon in tonnes to offset. If set, the widget will not allow the user to edit the value         | 42       |
 | placeholderAmount | Optional: The amount of carbon in tonnes to suggest offsetting. If set, the widget WILL allow the user to edit the value | 10       |
-
-![Carbon Offset Widget](/examples/carbon-offset-widget/dovuCarbonOffsetWidget.png)
