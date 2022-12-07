@@ -43,17 +43,13 @@ You will receive these following items when you start integrating with DOVU.
 
 Your partner identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
 
-## Example Button/Structure
+## Carbon Offset Widget
 
-We will provide example brand assets to assist with integrating a DOVU offset button on your service. Currently, you are free to use whatever styling you wish however we would prefer that you add the DOVU logo.
+We provide a simple frontend widget which can be dropped into your site for integration with our platform.
 
-The button and link will be dynamic and it will display to a consumer how much carbon they need to offset.
+![Screenshot 2022-12-07 at 14 51 29](https://user-images.githubusercontent.com/1853660/206217543-25e71f55-6a7f-4aa5-a32e-d5e548446fcc.png)
 
-Our medium-term aim will be to provide a dynamic button which will be similar in behaviour to [PayPal button](https://developer.paypal.com/demo/checkout/#/pattern/client) as a simple integration.
-
-```
-https://dovu.market/{partner-identifier}?amount={carbon-amount}&ref={customer-reference}
-```
+Please see the example setup instructions [here](/examples/carbon-offset-widget/README.md).
 
 ## After purchase flow
 
