@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOVU Partner</title>
+
+    <style>
+      #dovu {
+        position: relative;
+      }
+      #dovu-iframe {
+        width: 320px;
+        height: 200px;
+        border: 0px;
+        overflow: hidden;
+      }
+      #spinner::before {
+        animation: 1.5s linear infinite spinner;
+        animation-play-state: inherit;
+        border: solid 5px #cfd0d1;
+        border-bottom-color: #2aaa06;
+        border-radius: 50%;
+        content: '';
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        will-change: transform;
+        top: 30px;
+        left: 130px;
+      }
+      @keyframes spinner {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOVU Partner</h1>
+    <p>Example carbon offset button</p>
+
+    <div id="dovu">
+      <div id="spinner"></div>
+      <iframe
+        id="dovu-iframe"
+        src="https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=cust_123&amount=1242"
+        onload="document.getElementById('spinner').style.display='none';"
+        scrolling="no"
+      >
+      </iframe>
+    </div>
+
+    <h2>Lorem Ipsum</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nunc
+      non nisl aliquet, nec ultricies nisl aliquet. Nulla facilisi etiam sit
+      amet nisl purus in mollis nunc sed id. Nunc aliquet bibendum enim
+      facilisis gravida neque convallis a cras.
+    </p>
+  </body>
+</html>
