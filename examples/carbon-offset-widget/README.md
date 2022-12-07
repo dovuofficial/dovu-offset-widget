@@ -1,5 +1,7 @@
 # Carbon Offset Widget
 
+> For testing with DOVU you will be using the staging server or *https://staging.dovu.market/*
+
 An example of how to use the DOVU Carbon Offset Widget on any website can be found [here](/examples/carbon-offset-widget/carbonOffsetWidget.html).
 
 The widget can be customised using the following parameters on the iFrame src url:
