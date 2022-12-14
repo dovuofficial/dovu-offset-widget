@@ -105,7 +105,7 @@ Upon receiving and validating the webhook you can generate a state proof through
 https://testnet.mirrornode.hedera.com/api/v1/transactions/0.0.1156-1663839551-50378818/stateproof
 ```
 
-### Understanding the context of retirement-tx (coming soon) 
+### Understanding the context of retirement-tx
 
 We make the assumption that businesses want to select multiple projects for there clients to diversify the offering of carbon, because of this there would naturally be many *retirement-tx* values that represent the transfer events of different carbon tokens.
 
