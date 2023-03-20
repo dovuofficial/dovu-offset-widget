@@ -46,11 +46,11 @@ DOVU supports pre-ordering carbon offsets. This can be enabled by adding the `pu
 
 ![Light Theme](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetLight.png)
 
-| Parameter         | Type        | Default   | Required | Description                                                                                                    | Example   |
-| ----------------- | ----------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------- | --------- |
-| partnerId         | PATH        | n/a       | ✔️       | The partner ID who has reserved carbon with DOVU for their customers                                           | SWIRLDS   |
-| customerRef       | Query Param | n/a       | ✔️       | An identifier for the customer buying the carbon offset                                                        | cust_123  |
-| amount            | Query Param | 1         |          | The amount of carbon in tonnes to offset. If set, the widget will not allow the user to edit the value         | 42        |
-| placeholderAmount | Query Param | null      |          | The amount of carbon in tonnes to suggest offsetting. If set, the widget WILL allow the user to edit the value | 10        |
-| theme             | Query Param | dark      |          | The theme of the widget. Can be either `light` or `dark`.                                                      | light     |
-| purchaseType      | Query Param | available |          | The type of purchase. Can be either `available` or `pre-order`.                                                | pre-order |
+| Parameter           | Type        | Default   | Required | Description                                                                                                                                      | Example   |
+| ------------------- | ----------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| `partnerId`         | PATH        | n/a       | ✔️       | The partner ID who has reserved carbon with DOVU for their customers                                                                             | SWIRLDS   |
+| `customerRef`       | Query Param | n/a       | ✔️       | An identifier for the customer buying the carbon offset                                                                                          | cust_123  |
+| `amount`            | Query Param | -         |          | The amount of carbon in tonnes to offset. If set, the widget will overide the `placeholderAmount` value and not allow the user to edit the value | 42        |
+| `placeholderAmount` | Query Param | 1         |          | The amount of carbon in tonnes to suggest offsetting. If set, the widget WILL allow the user to edit the value                                   | 10        |
+| `theme`             | Query Param | dark      |          | The theme of the widget. Can be either `light` or `dark`.                                                                                        | light     |
+| `purchaseType`      | Query Param | available |          | The type of purchase. Can be either `available` or `pre-order`.                                                                                  | pre-order |
