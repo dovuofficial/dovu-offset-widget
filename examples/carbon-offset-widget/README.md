@@ -34,23 +34,72 @@ The widget can be customised using the following parameters on the iFrame src ur
 
 ![No Amount](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetDefault.png)
 
+### Purchase Types
+
+DOVU supports selling credits at different stages of the credit life cycle.
+
+As a Partner, if you have multiple projects available to purchase credits from and these projects span across differnet credit types then you can choose which projects are displayed by default when the user enters our site.
+
+This can be enabled by adding the `purchaseType` parameter to the iFrame src url and setting it to `available`, `pre-order` or `verified`.
+
+The default is `available`. Please see the below for more information on each purchase type.
+
+#### Available
+
+The credit has been certified and the credit has a full audit trail on Hedera mainnet. Once sold, the credit is instantly retired.
+
+#### Pre-order
+
+A project believes it has the data to support it issuing a credit in the future (once verification and certification has been completed)
+
+#### Verified
+
+A verifier has measured and verified the credits (this can include self-verification) but no certification body has certified the credit.
+
+## Unit Types
+
+The widget can be customised to show different unit types by adding the `unitType` parameter to the iFrame src url:
+
+`https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=<UNIT_TYPE>`
+
+The default is `carbon`. Please see the below for more information on each unit type.
+
+#### Carbon
+
+Will display `tonnes of CO2e` as the unit type.
+
+`https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=carbon`
+
+![Carbon](/examples/carbon-offset-widget/dovuCarbonOffsetWidget.png)
+
+#### Biodiversity
+
+Will display `hectares` as the unit type.
+`https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=biodiversity`
+
+![Biodiversity](/examples/carbon-offset-widget/dovuBiodiversityWidgetAmount.png)
+
+#### ELV
+
+Will display `Certificate of Deposits (CDs)` as the unit type.
+
+`https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=elv`
+
+![ELV](/examples/carbon-offset-widget/dovuELVWidgetAmount.png)
+
 ### Light and Dark Themes
 
 The widget can be customised to use a light or dark theme by adding the `theme` parameter to the iFrame src url:
-
-### Pre-order
-
-DOVU supports pre-ordering carbon offsets. This can be enabled by adding the `purchaseType` parameter to the iFrame src url and setting it to `pre-order`. This will automatically filter the list of carbon projects on the DOVU site to only show those that are available for pre-order.
-
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&theme=<THEME>`
 
 ![Light Theme](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetLight.png)
 
-| Parameter           | Type        | Default   | Required | Description                                                                                                                                      | Example   |
-| ------------------- | ----------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| `partnerId`         | PATH        | n/a       | ✔️       | The partner ID who has reserved carbon with DOVU for their customers                                                                             | SWIRLDS   |
-| `customerRef`       | Query Param | n/a       | ✔️       | An identifier for the customer buying the carbon offset                                                                                          | cust_123  |
-| `amount`            | Query Param | -         |          | The amount of carbon in tonnes to offset. If set, the widget will overide the `placeholderAmount` value and not allow the user to edit the value | 42        |
-| `placeholderAmount` | Query Param | 1         |          | The amount of carbon in tonnes to suggest offsetting. If set, the widget WILL allow the user to edit the value                                   | 10        |
-| `theme`             | Query Param | dark      |          | The theme of the widget. Can be either `light` or `dark`.                                                                                        | light     |
-| `purchaseType`      | Query Param | available |          | The type of purchase. Can be either `available` or `pre-order`.                                                                                  | pre-order |
+| Parameter           | Type        | Default   | Required | Description                                                                                                                                      | Example      |
+| ------------------- | ----------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| `partnerId`         | PATH        | n/a       | ✔️       | The partner ID who has reserved carbon with DOVU for their customers                                                                             | SWIRLDS      |
+| `customerRef`       | Query Param | n/a       | ✔️       | An identifier for the customer buying the carbon offset                                                                                          | cust_123     |
+| `amount`            | Query Param | -         |          | The amount of carbon in tonnes to offset. If set, the widget will overide the `placeholderAmount` value and not allow the user to edit the value | 42           |
+| `placeholderAmount` | Query Param | 1         |          | The amount of carbon in tonnes to suggest offsetting. If set, the widget WILL allow the user to edit the value                                   | 10           |
+| `theme`             | Query Param | dark      |          | The theme of the widget. Can be either `light` or `dark`.                                                                                        | light        |
+| `purchaseType`      | Query Param | available |          | The type of purchase. Can be either `available`, `pre-order` or `verified`.                                                                      | pre-order    |
+| `unitType`          | Query Param | carbon    |          | The credit unit being purchase. Can be either `carbon`, `biodiversity` or `elv`.                                                                 | biodiversity |
