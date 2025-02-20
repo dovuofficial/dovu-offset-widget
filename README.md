@@ -35,6 +35,7 @@ You should provide these items to DOVU before starting an integration:
 1. Company name
 2. DOVU Market Webhook Endpoint (we will test this with a "hello world" request)
 3. Redirect Endpoint (Redirecting back to a SaaS platform)
+4. A square company logo (minimum size 512px x 512px as a JPEG, PNG or SVG)
 
 You will receive these following items when you start integrating with DOVU.
 
@@ -47,7 +48,7 @@ Your partner identifier allows us to notify your application when a purchase is 
 
 We provide a simple frontend widget which can be dropped into your site for integration with our platform.
 
-![Screenshot 2022-12-07 at 14 51 29](https://user-images.githubusercontent.com/1853660/206217543-25e71f55-6a7f-4aa5-a32e-d5e548446fcc.png)
+![Screenshot 2022-12-07 at 14 51 29](/examples/carbon-offset-widgetdovuCarbonOffsetWidgetDefault.png)
 
 Please see the example setup instructions [here](/examples/carbon-offset-widget/README.md).
 
