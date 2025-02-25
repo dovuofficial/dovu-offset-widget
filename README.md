@@ -48,7 +48,7 @@ Your partner identifier allows us to notify your application when a purchase is 
 
 We provide a simple frontend widget which can be dropped into your site for integration with our platform.
 
-![Screenshot 2022-12-07 at 14 51 29](/examples/carbon-offset-widgetdovuCarbonOffsetWidgetDefault.png)
+![No Amount](/examples/carbon-offset-widget/dovuCarbonOffsetWidgetDefault.png)
 
 Please see the example setup instructions [here](/examples/carbon-offset-widget/README.md).
 
