@@ -81,7 +81,7 @@ Will display `hectares` as the unit type.
 
 #### ELV
 
-Will display `Certificate of Deposits (CDs)` as the unit type.
+Will display `ELV Certificates of Deposit` as the unit type.
 
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=elv`
 
