@@ -85,7 +85,7 @@ Will display `Certificate of Deposits (CDs)` as the unit type.
 
 `https://dovu.market/partner/<PARTNER_ID>/embed?customerRef=<CUSTOMER_REF>&unitType=elv`
 
-![ELV](/examples/carbon-offset-widget/dovuElvWidgetAmount.png)
+![ELV](/examples/carbon-offset-widget/dovuElvWidgetAmount)
 
 ### Light and Dark Themes
 
