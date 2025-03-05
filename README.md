@@ -30,6 +30,10 @@ sequenceDiagram
 
 ## Starting an integration
 
+### 1. Register a new account to track your orders
+Please register a new account at https://app.dovu.market/register. This account will allow you to log in to see all the orders that have passed through your partner widget.
+
+### 2. Integration requirements
 You should provide these items to DOVU before starting an integration:
 
 1. Company name
