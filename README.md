@@ -8,8 +8,6 @@ Below, we will describe the basic flow of what you can expect. It will follow wi
 
 ## Your interaction with DOVU, a flow.
 
-As fully-auditable credits are a highly limited resource we will work with whitelisted clients on a one-on-one basis to ensure that we can reserve enough credits for qualifying use cases.
-
 ```mermaid
 sequenceDiagram
     participant DOVU
@@ -18,14 +16,13 @@ sequenceDiagram
         Integrator-->>DOVU: Requirements of proposed usecase
         DOVU-->>Integrator: Decision of allocation with contract
         Integrator-->>DOVU: Acceptanace/Deny or legal redlines
-        DOVU-->>Integrator: Reserve amount of credits
     end
 
     DOVU->>Integrator: Assign HMAC secret and partner identifier
     Integrator->>Customer: Display dynamic DOVU button
     Customer->>DOVU: Purchase of credits from DOVU marketplace
     DOVU->>Customer: On purchase, redirect back to frontend
-    DOVU-->>Integrator: Webhook payload of credits purchase
+    DOVU-->>Integrator: Webhook payload of credits purchased
 ```
 
 ## Starting an integration
@@ -47,7 +44,7 @@ You will receive these following items when you start integrating with DOVU.
 1. Partner identifier
 2. HMAC Secret Key
 
-Your partner identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **ref** to identify a given customer for your incoming webhook.
+Your partner identifier allows us to notify your application when a purchase is made. You should combine all interactions with the DOVU marketplace with a **customerRef** to identify a given customer for your incoming webhook.
 
 ## Credit Purchase Widget
 
